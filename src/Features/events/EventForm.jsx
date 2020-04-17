@@ -1,14 +1,25 @@
 import React, { Component } from "react";
 import { Segment, Form, Button } from "semantic-ui-react";
 
-export default class EventForm extends Component {
+ class EventForm extends Component {
+
+  state={
+    title:''
+  }
+
+  handleInputChange =(evt)=>{
+    this.setState({
+      [evt.target.name]:evt.target.value
+    })
+  }
   render() {
+    const {title}=this.state
     return (
       <Segment>
         <Form>
           <Form.Field>
             <label>Event Title</label>
-            <input placeholder="First Name" />
+            <input name='title' onChange={this.handleInputChange} value={title} placeholder="First Name" />
           </Form.Field>
           <Form.Field>
             <label>Event Date</label>
@@ -35,3 +46,4 @@ export default class EventForm extends Component {
     );
   }
 }
+export default EventForm;
