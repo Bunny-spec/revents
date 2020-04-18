@@ -6,12 +6,7 @@ class EventListAttendee extends Component {
     const { attendee } = this.props;
     return (
       <List>
-        <Image
-          as="a"
-          size="mini"
-          circular
-          src={"https://randomuser.me/api/portraits/women/42.jpg"}
-        ></Image>
+        <Image as="a" size="mini" circular src={attendee.photoURL}></Image>
       </List>
     );
   }
